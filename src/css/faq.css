@@ -1,0 +1,106 @@
+.title-ac {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #080c09;
+  margin-bottom: 32px;
+}
+
+.faq {
+  padding: 48px 20px;
+  max-width: 375px;
+  background: #fff;
+  margin: 0 auto;
+}
+
+.faq .ac-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #080c09;
+  background: #f9f9f9;
+  border: none;
+}
+
+.faq .ac-trigger .question {
+  flex: 1;
+  text-align: left;
+}
+
+.faq .ac-trigger:hover {
+  background: #eee;
+}
+
+.faq .ac-trigger::after {
+  display: none !important;
+  content: none !important;
+}
+
+.faq .ac-trigger .icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  fill: #333;
+  margin-left: auto;
+}
+
+.faq .ac.is-active .ac-trigger .icon {
+  transform: rotate(180deg);
+}
+
+.faq .ac-panel {
+  margin: 0;
+  background: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #080c09;
+  transition: max-height 0.1s ease-out;
+  overflow: hidden;
+}
+
+.accordion-container .ac-panel .ac-text {
+  padding: 0 !important;
+  padding-bottom: 24px !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+}
+
+.accordion-container .ac-header,
+.accordion-container .ac-panel {
+  margin: 0;
+  padding: 0;
+}
+
+.accordion-container .ac-trigger {
+  background: transparent;
+}
+
+.accordion-container .ac {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .faq {
+    padding: 48px 32px;
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .title-ac {
+    font-size: 48px;
+  }
+
+  .faq {
+    padding: 80px 64px;
+    max-width: 865px;
+  }
+}

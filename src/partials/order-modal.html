@@ -1,0 +1,55 @@
+<div class="backdrop" id="order-backdrop">
+  <div class="modal" id="order-form">
+    <button type="button" class="modal-close-btn order-close-btn">
+      <svg class="modal-close-btn-svg" width="32" height="32">
+        <use href="/img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div class="order-form-container">
+      <h2 class="order-title">Замовити</h2>
+      <form id="order-form-id" class="order-form">
+        <div class="form-group">
+          <label for="user-name">Ім'я</label>
+          <input
+            autocomplete="off"
+            type="text"
+            id="user-name"
+            name="name"
+            required
+            placeholder="Введіть ім'я"
+          />
+          <span class="error-text">Error text</span>
+        </div>
+        <div class="form-group">
+          <label for="user-phone">Телефон</label>
+          <input
+            autocomplete="off"
+            type="tel"
+            id="user-phone"
+            name="phone"
+            required
+            placeholder="380501234567"
+            pattern="^\+?[0-9]{12}$"
+          />
+          <span class="error-text">Error text</span>
+        </div>
+        <div class="form-group">
+          <label for="user-comment">Коментар</label>
+          <textarea
+            id="user-comment"
+            name="comment"
+            rows="3"
+            placeholder="Type your message"
+          ></textarea>
+          <span class="error-text">Error text</span>
+        </div>
+        <input type="hidden" name="productId" id="product-id" />
+        <input type="hidden" name="color" id="product-color" />
+        <button type="submit" class="submit-btn">
+          <span class="btn-text">Надіслати заявку</span>
+          <span class="loader hidden"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

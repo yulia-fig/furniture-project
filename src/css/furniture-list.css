@@ -1,0 +1,298 @@
+.furniture {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.furniture-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+}
+.load-more.hidden {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  .furniture-title {
+    font-size: 48px;
+  }
+}
+
+.furniture-subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.categories-list {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 375px) {
+  .categories-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .categories-list {
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .categories-list {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.furniture-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .furniture-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .furniture-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.furniture-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #fff;
+  overflow: hidden;
+  gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.furniture-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.furniture-card img {
+  width: 100%;
+  height: 277px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.furniture-name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.furniture-price {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.color-list {
+  display: flex;
+  gap: 8px;
+}
+
+.color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: inline-block;
+}
+
+.details-btn {
+  padding: 10px 24px;
+  width: 100%;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 100px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: auto;
+}
+
+.load-more {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 100%;
+  max-width: 340px;
+  height: 46px;
+  background-color: #6b0609;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.load-more:hover,
+.load-more:focus-visible {
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 1440px) {
+  .load-more {
+    max-width: 421px;
+  }
+}
+
+.category-btn {
+  border-radius: 8px;
+  padding: 32px 16px;
+  width: 160px;
+  height: 122px;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+}
+
+.category-btn.active {
+  outline: 8px solid #6b0609;
+}
+
+.category-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .category-btn {
+    width: 158px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .category-btn {
+    width: 166px;
+  }
+}
+
+.category-btn[data-category="М'які меблі"] {
+  background-image: image-set(
+    url('../img/furniture-list/sofa.jpg') 1x,
+    url('../img/furniture-list/sofa@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Шафи та системи зберігання'] {
+  background-image: image-set(
+    url('../img/furniture-list/wardrobe.jpg') 1x,
+    url('../img/furniture-list/wardrobe@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Ліжка та матраци'] {
+  background-image: image-set(
+    url('../img/furniture-list/bed.jpg') 1x,
+    url('../img/furniture-list/bed@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Столи'] {
+  background-image: image-set(
+    url('../img/furniture-list/table.jpg') 1x,
+    url('../img/furniture-list/table@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Стільці та табурети'] {
+  background-image: image-set(
+    url('../img/furniture-list/chairs.jpg') 1x,
+    url('../img/furniture-list/chairs@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Кухні'] {
+  background-image: image-set(
+    url('../img/furniture-list/kitchen.jpg') 1x,
+    url('../img/furniture-list/kitchen@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Меблі для дитячої'] {
+  background-image: image-set(
+    url('../img/furniture-list/childrens-room.jpg') 1x,
+    url('../img/furniture-list/childrens-room@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Меблі для офісу'] {
+  background-image: image-set(
+    url('../img/furniture-list/home-office.jpg') 1x,
+    url('../img/furniture-list/home-office@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Меблі для передпокою'] {
+  background-image: image-set(
+    url('../img/furniture-list/entryway.jpg') 1x,
+    url('../img/furniture-list/entryway@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Меблі для ванної кімнати'] {
+  background-image: image-set(
+    url('../img/furniture-list/bathroom.jpg') 1x,
+    url('../img/furniture-list/bathroom@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Садові та вуличні меблі'] {
+  background-image: image-set(
+    url('../img/furniture-list/outdoor-patio.jpg') 1x,
+    url('../img/furniture-list/outdoor-patio@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='Декор та аксесуари'] {
+  background-image: image-set(
+    url('../img/furniture-list/home-decor.jpg') 1x,
+    url('../img/furniture-list/home-decor@2x.jpg') 2x
+  );
+}
+
+.category-btn[data-category='all'] {
+  background-image: image-set(
+    url('../img/furniture-list/showroom.jpg') 1x,
+    url('../img/furniture-list/showroom@2x.jpg') 2x
+  );
+}

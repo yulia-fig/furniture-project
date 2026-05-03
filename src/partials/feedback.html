@@ -1,0 +1,55 @@
+<section class="feedback" id="feedback">
+  <div class="container">
+    <div class="feedback__header">
+      <h2 class="feedback__title">Відгуки Клієнтів</h2>
+      <p class="feedback__subtitle">
+        Дізнайтеся, що кажуть наші задоволені клієнти про наші меблі.
+      </p>
+    </div>
+
+    <div class="feedback__content" data-feedback-section>
+      <span class="loader feedback__loader hidden" data-feedback-loader></span>
+
+      <div class="feedback__slider-wrap hidden" data-feedback-ready>
+        <div class="swiper feedback-swiper" data-feedback-swiper>
+          <ul class="swiper-wrapper feedback__list" data-feedback-list></ul>
+        </div>
+
+        <div class="feedback__footer">
+          <div
+            class="feedback__pagination"
+            role="navigation"
+            aria-label="Навігація по відгуках"
+            data-feedback-pagination
+          ></div>
+
+          <div class="feedback__controls">
+            <button
+              class="feedback__nav feedback__nav--prev"
+              type="button"
+              aria-label="Попередній відгук"
+              data-feedback-prev
+            >
+              <svg class="feedback__nav-icon" width="18" height="18" aria-hidden="true">
+                <use href="/img/sprite.svg#icon-chevron-down"></use>
+              </svg>
+            </button>
+
+            <button
+              class="feedback__nav feedback__nav--next"
+              type="button"
+              aria-label="Наступний відгук"
+              data-feedback-next
+            >
+              <svg class="feedback__nav-icon" width="18" height="18" aria-hidden="true">
+                <use href="/img/sprite.svg#icon-chevron-down"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/feedback.js"></script>
+</section>
