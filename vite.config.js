@@ -1,46 +1,45 @@
 import { defineConfig } from 'vite';
-import { globSync } from 'glob';
+import { glob } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
+import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
-export default defineConfig(() => {
+export default defineConfig(({ command }) => {
   return {
-    // Project structure
-    root: '.',
-
-    // Build settings for Vercel
+    define: {
+      [command === 'serve' ? 'global' : '_global']: {},
+    },
+    root: 'src',
     build: {
-      outDir: 'dist',
-      emptyOutDir: true,
       sourcemap: true,
-
       rollupOptions: {
-        input: globSync('./src/*.html'),
-
+        input: glob.sync('./src/*.html'),
         output: {
-          // Split vendor code (node_modules)
           manualChunks(id) {
             if (id.includes('node_modules')) {
               return 'vendor';
             }
           },
-
-          // JS output naming
-          entryFileNames: (chunkInfo) => {
-            return chunkInfo.name === 'commonHelpers'
-              ? 'commonHelpers.js'
-              : '[name].js';
+          entryFileNames: chunkInfo => {
+            if (chunkInfo.name === 'commonHelpers') {
+              return 'commonHelpers.js';
+            }
+            return '[name].js';
           },
-
-          // Assets output naming
-          assetFileNames: 'assets/[name]-[hash][extname]',
+          assetFileNames: assetInfo => {
+            if (assetInfo.name && assetInfo.name.endsWith('.html')) {
+              return '[name].[ext]';
+            }
+            return 'assets/[name]-[hash][extname]';
+          },
         },
       },
+      outDir: '../dist',
+      emptyOutDir: true,
     },
-
-    // Plugins
     plugins: [
       injectHTML(),
+      FullReload(['./src/**/**.html']),
       SortCss({
         sort: 'mobile-first',
       }),
